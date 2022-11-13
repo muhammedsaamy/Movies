@@ -1,1 +1,37 @@
-<p>register works!</p>
+<div class="container">
+<h1>Register Form</h1>
+<form [formGroup]="registerForm">
+  <div class="group-input">
+    <label>First Name</label>
+    <input formControlName="first-name" type="text" class="form-control m-3" >
+    <div class="text-danger">invalid  Firstname</div>
+  </div>
+
+  <div class="group-input">
+    <label>Last Name</label>
+    <input formControlName="last-name" type="text" class="form-control m-3" >
+    <div class="text-danger">invalid Last name</div>
+  </div>
+
+  <div class="group-input">
+    <label>Age</label>
+    <input formControlName="age" type="text" class="form-control m-3" >
+    <div class="text-danger">invalid age</div>
+  </div>
+
+  <div class="group-input">
+    <label>Email</label>
+    <input formControlName="email" type="text" class="form-control m-3" >
+    <div class="text-danger">invalid email</div>
+  </div>
+
+  <div class="group-input">
+    <label>Passwrd</label>
+    <input formControlName="password" type="text" class="form-control m-3" >
+    <div class="text-danger">invalid password</div>
+  </div>
+  <input class="btn btn-primary" type="submit">
+</form>
+</div>
+
+
