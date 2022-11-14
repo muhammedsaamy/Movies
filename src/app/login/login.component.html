@@ -1,1 +1,25 @@
-<p>login works!</p>
+<div class="container my-5 w-50">
+  <h1>Register Form</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+    <div class="group-input">
+      <label>Email</label>
+      <input formControlName="email" type="email" class="form-control m-3" >
+      <div *ngIf="loginForm.controls.email.invalid&&loginForm.controls.email.touched" class="text-danger">
+        <p *ngIf="loginForm.controls.email.errors?.required">email required</p>
+        <p *ngIf="loginForm.controls.email.errors?.email">email should be valid mail</p>
+      </div>
+    </div>
+
+    <div class="group-input">
+      <label>Passwrd</label>
+      <input formControlName="password" type="password" class="form-control m-3" >
+      <div *ngIf="loginForm.controls.password.invalid&&loginForm.controls.password.touched" class="text-danger">
+        <p *ngIf="loginForm.controls.password.errors?.required">Pasword required</p>
+        <p *ngIf="loginForm.controls.password.errors?.pattern">Password should be one letter at least and 3 digits</p>
+      </div>
+    </div>
+    <input [disabled]="loginForm.invalid" class="btn btn-primary" type="submit">
+  </form>
+  </div>
+
+
