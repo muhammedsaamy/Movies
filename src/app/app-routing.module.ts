@@ -21,7 +21,7 @@ const routes: Routes = [
   {path:"network",component:NetworkComponent},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
-  {path:"details",component:DetailsComponent},
+  {path:"details/:id/:mediaType",component:DetailsComponent},
   {path:"**",component:NotfoundComponent},
 ];
 

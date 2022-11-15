@@ -1,1 +1,9 @@
-<p>details works!</p>
+<div class="row">
+  <img [src]="imgBaseurl+movieDetails.poster_path" class="img-fluid col-md-4 my-3">
+  <div class="col-md-8">
+    <p *ngIf="mediaType.includes('tv')" class="p-5 m-5"> Name : {{ movieDetails.name}}</p>
+    <p *ngIf="mediaType.includes('movie')" class="p-5 m-5"> Name : {{ movieDetails.title}}</p>
+    <p class="p-5 m-5"> Overview : {{ movieDetails.overview}}</p>
+    <!-- <p>{{movieDetails|json}}</p> -->
+  </div>
+</div>
