@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TrendingService } from '../trending.service';
 
 @Component({
   selector: 'app-tvshows',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TvshowsComponent implements OnInit {
 
-  constructor() { }
+  moviesList:any[]=[];
+  tvShowsList:any[]=[];
+  imgBaseurl:string="https://image.tmdb.org/t/p/original";
+
+  constructor(private _trendingService:TrendingService) { }
 
   ngOnInit(): void {
+    this.getTvShows();
   }
+
+    getTvShows(){
+      this._trendingService.getTrending("tv").subscribe((response)=>{
+        this.tvShowsList= response.results;
+      })
+}
 
 }

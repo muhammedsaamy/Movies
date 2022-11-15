@@ -1,1 +1,18 @@
-<p>movies works!</p>
+<div class="row my-5">
+
+  <div class="col-md-4">
+    <div class="brdr w-25 mb-5"></div>
+    <h2>Trending</h2>
+    <h2>Movies</h2>
+    <h2>To watch now</h2>
+    <span class="spn">Most watched movies by day</span>
+    <div class="brdr w-100 mt-5"></div>
+  </div>
+
+  <div class="col-md-2 my-2" *ngFor="let item of moviesList">
+    <div class="item">
+      <img [src]="imgBaseurl+item.poster_path" class="img-fluid my-2">
+      <h4 class="h6">{{item.title}}</h4>
+    </div>
+  </div>
+</div>
