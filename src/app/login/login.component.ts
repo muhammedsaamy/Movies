@@ -11,20 +11,23 @@ import { LoginRequest } from '../login-request';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+isLoading:boolean=false;
   constructor(private _AuthService:AuthService, private _router:Router) { }
 
   ngOnInit(): void {
   }
 
   submitForm(){
+    this.isLoading=true;
     if(this.loginForm.invalid){return;}
     this._AuthService.signIn(this.loginForm.value).subscribe((data)=>{
-      if(data.message=="success"){
-        alert(data.message)
+      if(data.message==="success"){
+        localStorage.setItem('userToken',data.token);
+        this._AuthService.saveUserData();
         this._router.navigateByUrl("/home")
       }
       else{
+        this.isLoading=false;
         alert(data.message)
       }
     })

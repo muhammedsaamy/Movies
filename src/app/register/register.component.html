@@ -48,7 +48,11 @@
       <p *ngIf="registerForm.controls.password.errors?.pattern">Password should be one letter at least and 3 digits</p>
     </div>
   </div>
-  <input [disabled]="registerForm.invalid" class="btn btn-primary" type="submit">
+  <!-- <input [disabled]="registerForm.invalid" class="btn btn-primary" type="submit"> -->
+  <button [disabled]="registerForm.invalid" class="m-3 btn btn-info">
+    <span *ngIf="isLoading"><i class="fas fa-spinner fa-spin"></i></span>
+    <span *ngIf="!isLoading">Register</span>
+  </button>
 </form>
 </div>
 

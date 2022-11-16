@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TrendingService } from '../trending.service';
+import { NgxSpinnerService } from "ngx-spinner";
+
+
 
 
 @Component({
@@ -13,7 +16,7 @@ export class HomeComponent implements OnInit {
   tvShowsList:any[]=[];
   imgBaseurl:string="https://image.tmdb.org/t/p/original";
 
-  constructor(private _trendingService:TrendingService) { }
+  constructor(private _trendingService:TrendingService, private _NgxSpinnerService:NgxSpinnerService) { }
 
   ngOnInit(): void {
     this.getMovies();
@@ -21,9 +24,11 @@ export class HomeComponent implements OnInit {
   }
 
   getMovies(){
+    this._NgxSpinnerService.show();
     this._trendingService.getTrending("movie").subscribe((response)=>{
       this.moviesList= response.results;
-    })
+    },(error)=>{alert(error)} ,
+    ()=>{setTimeout(()=>{this._NgxSpinnerService.hide()},3000)})
     }
 
     getTvShows(){
