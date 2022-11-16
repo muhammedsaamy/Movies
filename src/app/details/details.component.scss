@@ -1,9 +1,20 @@
-p{
-  font-size: larger;
-  font-weight: bolder;
-  background-color: rgb(8, 8, 31);
+// p{
+//   font-size: large;
+//   font-weight: bolder;
+//   background-color: rgb(8, 8, 31);
+//   border-radius: 30px;
+// }
+
+.gnrs{
+  display: inline;
+  background-color: rgb(69, 80, 179);
+  margin: 10px;
   border-radius: 30px;
 }
+.fontLight{
+  color: rgba(231, 231, 236, 0.644);
+}
+
 
 img{
   border-radius: 30px;

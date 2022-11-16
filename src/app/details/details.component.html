@@ -1,9 +1,19 @@
-<div class="row">
+<div class="row my-3">
   <img [src]="imgBaseurl+movieDetails.poster_path" class="img-fluid col-md-4 my-3">
-  <div class="col-md-8">
-    <p *ngIf="mediaType.includes('tv')" class="p-5 m-5"> Name : {{ movieDetails.name}}</p>
-    <p *ngIf="mediaType.includes('movie')" class="p-5 m-5"> Name : {{ movieDetails.title}}</p>
-    <p class="p-5 m-5"> Overview : {{ movieDetails.overview}}</p>
+  <div class="col-md-8 my-3">
+    <p *ngIf="mediaType.includes('tv')" class=" ">{{ movieDetails.name}}</p>
+    <p *ngIf="mediaType.includes('movie')" class=" ">{{ movieDetails.title}}</p>
+    <p *ngIf="mediaType.includes('movie')" class="fontLight mx-5">{{ movieDetails.tagline}}</p>
+    <div class=" m-4">
+      <p class="gnrs p-1 ms-3 "> {{ movieDetails.genres[0].name}}</p>
+      <p class="gnrs p-1 "> {{ movieDetails.genres[1].name}}</p>
+      <p *ngIf="mediaType.includes('movie')" class="gnrs p-1 "> {{ movieDetails.genres[2].name}}</p>
+    </div>
+    <div class=" m-2"> Vote : {{ movieDetails.vote_average}}</div>
+    <div class=" m-2"> Vote count : {{ movieDetails.vote_count}}</div>
+    <div class=" m-2"> popularity : {{ movieDetails.popularity}}</div>
+    <div class=" m-2"> Release Date : {{ movieDetails.release_date}}</div>
+    <p class="fontLight p-5"> Overview : {{ movieDetails.overview}}</p>
     <!-- <p>{{movieDetails|json}}</p> -->
   </div>
 </div>

@@ -23,6 +23,7 @@ export class DetailsComponent implements OnInit {
   getTrendingDetails(){
     this._TrendingService.getTrendingDetails(this.mediaType,this.currentId).subscribe((response)=>{
       this.movieDetails=response
+      console.log(response)
     })
   }
   ngOnInit(): void {
