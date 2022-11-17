@@ -11,11 +11,10 @@ import { NgxSpinnerService } from "ngx-spinner";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
   moviesList:any[]=[];
   tvShowsList:any[]=[];
   imgBaseurl:string="https://image.tmdb.org/t/p/original";
-
+  term=''
   constructor(private _trendingService:TrendingService, private _NgxSpinnerService:NgxSpinnerService) { }
 
   ngOnInit(): void {
@@ -29,6 +28,7 @@ export class HomeComponent implements OnInit {
       this.moviesList= response.results;
     },(error)=>{alert(error)} ,
     ()=>{setTimeout(()=>{this._NgxSpinnerService.hide()},3000)})
+
     }
 
     getTvShows(){

@@ -1,5 +1,6 @@
 <ngx-spinner type="ball-scale-multiple"></ngx-spinner>
 
+<input [(ngModel)]="term" class="text-white form-control mr-sm-2 m-3 bg-transparent"  type="search" placeholder="Search" >
 
 <div class="row my-5">
 
@@ -12,7 +13,7 @@
     <div class="brdr w-100 mt-5"></div>
   </div>
 
-  <div class="col-md-2 my-2" *ngFor="let item of moviesList">
+  <div class="col-md-2 my-2" *ngFor="let item of moviesList|search:term">
     <div class="item" routerLink="/details/{{item.id}}/movie">
       <img [src]="imgBaseurl+item.poster_path" class="img-fluid my-2">
       <h4 class="h6">{{item.title}}</h4>
