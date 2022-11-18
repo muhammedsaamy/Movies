@@ -18,6 +18,16 @@
     </div>
   </div>
 </div>
+<div class="d-flex justify-content-center m-5">
+  <nav aria-label=" Page navigation example">
+    <ul class=" pagination">
+      <li  class="page-item"><a  (click)="prev()" class="page-link" >Previous</a></li>
+      <li *ngFor="let num of [1,2,3,4,5]" class="page-item"><a (click)="getPaginatedData(num)" class="page-link" >{{num}}</a></li>
+      <li  class="page-item"><a (click)="next()" class="page-link" >Next</a></li>
+    </ul>
+  </nav>
+  </div>
+
 
 
 
