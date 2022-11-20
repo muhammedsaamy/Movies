@@ -19,7 +19,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { SearchPipe } from './search.pipe';
-
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { FooterComponent } from './footer/footer.component';
+// import { ToastrModule } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -36,7 +39,8 @@ import { SearchPipe } from './search.pipe';
     RegisterComponent,
     DetailsComponent,
     AboutComponent,
-    SearchPipe
+    SearchPipe,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -44,8 +48,12 @@ import { SearchPipe } from './search.pipe';
     ReactiveFormsModule,
     HttpClientModule,
     NgxSpinnerModule,
+    CommonModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    CarouselModule,
+    // ToastrModule.forRoot(),
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,8 @@ import { FormControl, FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { LoginRequest } from '../login-request';
+// import { ToastrService } from 'ngx-toastr';
+
 
 
 @Component({
@@ -12,7 +14,7 @@ import { LoginRequest } from '../login-request';
 })
 export class LoginComponent implements OnInit {
 isLoading:boolean=false;
-  constructor(private _AuthService:AuthService, private _router:Router) { }
+  constructor(private _AuthService:AuthService, private _router:Router ) { }
 
   ngOnInit(): void {
   }
@@ -22,11 +24,13 @@ isLoading:boolean=false;
     if(this.loginForm.invalid){return;}
     this._AuthService.signIn(this.loginForm.value).subscribe((data)=>{
       if(data.message==="success"){
+        // this._ToastrService.success(`Done`,`Login Success`)
         localStorage.setItem('userToken',data.token);
         this._AuthService.saveUserData();
         this._router.navigateByUrl("/home")
       }
       else{
+        // this._ToastrService.success(data.message,`Login Error`)
         this.isLoading=false;
         alert(data.message)
       }
