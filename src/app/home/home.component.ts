@@ -57,6 +57,7 @@ export class HomeComponent implements OnInit {
     this._NgxSpinnerService.show();
     this._trendingService.getTrending("movie").subscribe((response)=>{
       this.moviesList= response.results;
+      // console.log(response)
     },(error)=>{alert(error)} ,
     ()=>{setTimeout(()=>{this._NgxSpinnerService.hide()},3000)})
 

@@ -1,1 +1,9 @@
-<p>people works!</p>
+<div class="row">
+  <div class="col-md-2 my-2" *ngFor="let item of people">
+    <div class="item" >
+      <img [src]="imgBaseurl+item.profile_path" class="img-fluid my-2">
+      <h4 class="h6">{{item.name}}</h4>
+    </div>
+  </div>
+
+</div>
