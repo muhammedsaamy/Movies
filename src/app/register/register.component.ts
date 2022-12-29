@@ -13,19 +13,19 @@ import { AuthService } from '../auth.service';
 export class RegisterComponent implements OnInit {
   isLoading:boolean=false;
   submitForm(){
-    this.isLoading=true;
+    // this.isLoading=true;
     if(this.registerForm.invalid){return;}
-    this._AuthService.signUp(this.registerForm.value).subscribe((data)=>{
-      if(data.message=="success"){
-        this.isLoading=false;
-        alert(data.message)
-        this._router.navigateByUrl("/login")
-      }
-      else{
-        this.isLoading=false;
-        alert(data.message)
-      }
-    })
+    // this._AuthService.signUp(this.registerForm.value).subscribe((data)=>{
+    //   if(data.message=="success"){
+    //     this.isLoading=false;
+    //     alert(data.message)
+    //     this._router.navigateByUrl("/login")
+    //   }
+    //   else{
+    //     this.isLoading=false;
+    //     alert(data.message)
+    //   }
+    // })
   }
 
 registerForm:FormGroup=new FormGroup(

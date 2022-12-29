@@ -37,7 +37,8 @@ signIn(loginData:LoginRequest):Observable<any>
 logOut(){
   localStorage.removeItem('userToken');
   this.userData.next(null);
-this._router.navigateByUrl('/login')
+// this._router.navigateByUrl('/login')
+this._router.navigateByUrl('/home')
 }
 
 }

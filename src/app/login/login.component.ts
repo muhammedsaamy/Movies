@@ -22,19 +22,19 @@ isLoading:boolean=false;
   submitForm(){
     this.isLoading=true;
     if(this.loginForm.invalid){return;}
-    this._AuthService.signIn(this.loginForm.value).subscribe((data)=>{
-      if(data.message==="success"){
-        // this._ToastrService.success(`Done`,`Login Success`)
-        localStorage.setItem('userToken',data.token);
-        this._AuthService.saveUserData();
+    // this._AuthService.signIn(this.loginForm.value).subscribe((data)=>{
+    //   if(data.message==="success"){
+    //     // this._ToastrService.success(`Done`,`Login Success`)
+    //     localStorage.setItem('userToken',data.token);
+    //     this._AuthService.saveUserData();
         this._router.navigateByUrl("/home")
-      }
-      else{
-        // this._ToastrService.success(data.message,`Login Error`)
-        this.isLoading=false;
-        alert(data.message)
-      }
-    })
+    //   }
+    //   else{
+    //     // this._ToastrService.success(data.message,`Login Error`)
+    //     this.isLoading=false;
+    //     alert(data.message)
+    //   }
+    // })
 
   }
 
